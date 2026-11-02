@@ -42,7 +42,7 @@ policies:
   spec_review: hub_pr
   feature_pr_agent_review: true
   feature_pr_human_review: required
-  human_mode: false
+  human_mode: true
   lease_hours: 48
 budgets:
   per_feature_anthropic_usd: 15
