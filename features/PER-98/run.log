@@ -19,3 +19,9 @@
 2026-11-02T12:37:44.115698+00:00 heartbeat architect_gate
 2026-11-02T12:37:44.115817+00:00 node start architect_gate
 2026-11-02T12:37:53.562852+00:00 node end architect_gate waiting=architect_review
+2026-11-02T12:39:54.719901+00:00 heartbeat dev
+2026-11-02T12:39:54.720194+00:00 node start dev
+2026-11-02T12:39:55.841072+00:00 dev cursor 01-app attempt=1
+2026-11-02T12:40:23.159579+00:00 heartbeat dev
+2026-11-02T12:40:23.159672+00:00 node start dev
+2026-11-02T12:40:23.208515+00:00 node end dev waiting=dirty_worktree

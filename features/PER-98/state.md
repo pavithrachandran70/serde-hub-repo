@@ -1,20 +1,20 @@
 ---
 schema_version: 1
 key: PER-98
-status: waiting_architect_review
-current_node: architect_gate
+status: in_development
+current_node: dev
 track: standard
 involved_repos:
 - app
 depends_on: []
 owner: pavc
-lease_until: '2026-11-04T12:36:49.132372+00:00'
-revision: 15
+lease_until: '2026-11-04T12:39:53.596736+00:00'
+revision: 28
 hub_sha: null
 ticket_hash: 38c37af86175d5a4
 jira_hash: 38c37af86175d5a4
-tpm_approved: false
-specs_locked: false
+tpm_approved: true
+specs_locked: true
 skills_lock:
   bmad: 1cbcfa272fe65787c06a1fa164a901f46117cca7
 stories:
@@ -28,7 +28,7 @@ pr_ids:
   hub_plan: '1'
   hub_arch: '2'
   hub: '2'
-waiting_for: architect_review
+waiting_for: dirty_worktree
 tokens_in: 23553
 tokens_out: 3402
 cost_anthropic_usd: 0.120953
@@ -67,6 +67,24 @@ history:
 - node: architect_gate
   note: awaiting human hub PR approval
   at: '2026-11-02T12:37:53.562609+00:00'
+- node: architect_gate
+  note: approved via hub PR (reconcile)
+  at: '2026-11-02T12:39:53.579205+00:00'
+- node: architect_gate
+  note: "forge unlocked architect_review \u2192 resume"
+  at: '2026-11-02T12:39:53.596773+00:00'
+- node: dev
+  note: starting
+  at: '2026-11-02T12:39:54.720561+00:00'
+- node: catch_up
+  note: manual commit 0db9b3b504bcb0a7fa9cf001429869519afd3e9a
+  at: '2026-11-02T12:40:22.058478+00:00'
+- node: dev
+  note: starting
+  at: '2026-11-02T12:40:23.160002+00:00'
+- node: dev
+  note: dirty worktree stashed
+  at: '2026-11-02T12:40:23.203761+00:00'
 ---
 
 # Feature state
