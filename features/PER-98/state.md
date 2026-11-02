@@ -9,7 +9,7 @@ involved_repos:
 depends_on: []
 owner: pavc
 lease_until: '2026-11-04T12:39:53.596736+00:00'
-revision: 28
+revision: 42
 hub_sha: null
 ticket_hash: 38c37af86175d5a4
 jira_hash: 38c37af86175d5a4
@@ -28,7 +28,7 @@ pr_ids:
   hub_plan: '1'
   hub_arch: '2'
   hub: '2'
-waiting_for: dirty_worktree
+waiting_for: null
 tokens_in: 23553
 tokens_out: 3402
 cost_anthropic_usd: 0.120953
@@ -85,6 +85,12 @@ history:
 - node: dev
   note: dirty worktree stashed
   at: '2026-11-02T12:40:23.203761+00:00'
+- node: dev
+  note: starting
+  at: '2026-11-02T12:43:42.794264+00:00'
+- node: dev
+  note: done 01-app
+  at: '2026-11-02T12:57:00.940958+00:00'
 ---
 
 # Feature state
