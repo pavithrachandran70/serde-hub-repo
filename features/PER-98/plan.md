@@ -16,8 +16,8 @@ Fix serde_derive macro to avoid unaligned references in packed structs when dese
    - focus: Focus on the unsafe reference creation in serde_derive/src/de/struct_.rs InPlaceSeed code; the fix must use ptr::addr_of_mut! for packed struct fields to avoid creating unaligned references.
 2. [x] **architect_gate (review)** _(auto)_ — Human approval of specs and this plan before Dev.
 3. [ ] **dev** _(auto)_ — Loop delivery.
-4. [ ] **pre_pr_qa** _(auto)_ — Loop delivery.
-5. [ ] **open_pr** _(auto)_ — Loop delivery.
+4. [x] **pre_pr_qa** _(auto)_ — Loop delivery.
+5. [x] **open_pr** _(auto)_ — Loop delivery.
 6. [ ] **pr_review** _(auto)_ — Loop delivery.
 7. [ ] **merge** _(auto)_ — Loop delivery.
 
