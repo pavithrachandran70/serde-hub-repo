@@ -1,0 +1,11 @@
+Internally tagged newtypes that contain their own enum now compile and round-trip through `serde_json`. `cargo +nightly test --features unstable` in `test_suite` passed.
+
+The old path wrapped the serializer and called `Serialize` again. For `Box<Expr>` or `Vec<Expr>` that wrapper type grew on every step, so rustc hit a recursion limit. Serialization now buffers the inner value first, then writes the tag. Structs and maps still flatten the way they did before. Sequences, strings, and values that already carry the same tag are written as one field named after the variant, for example `{"type":"And","And":[...]}`. Deserialization still accepts the old flattened form, and uses that wrapped field only when the old form does not deserialize.
+
+Files changed:
+
+- `serde/src/private/ser.rs`
+- `serde/src/private/de.rs`
+- `serde_derive/src/de/enum_internally.rs`
+- `test_suite/Cargo.toml`
+- `test_suite/tests/test_internally_tagged_recursive.rs`

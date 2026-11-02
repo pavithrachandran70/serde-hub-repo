@@ -1,0 +1,690 @@
+===== 2026-11-02T14:11:56+00:00 attempt 1: PASS =====
+$ cd serde && cargo +nightly clippy --features rc,unstable -- -Dclippy::all -Dclippy::pedantic
+
+   Compiling serde_core v1.0.229 (/home/pavc/.adlc/worktrees/Serde/PER-100/app/serde_core)
+   Compiling serde v1.0.229 (/home/pavc/.adlc/worktrees/Serde/PER-100/app/serde)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 4.40s
+
+(exit 0)
+$ cd test_suite && cargo +nightly test --features unstable
+
+running 1 test
+test ui ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.47s
+
+
+running 2 tests
+test regression::issue2565::flatten_variant ... ok
+test regression::issue2565::simple_variant ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 61 tests
+test flatten::alias ... ok
+test flatten::complex ... ok
+test flatten::enum_::adjacently_tagged::struct_ ... ok
+test flatten::enum_::adjacently_tagged::newtype ... ok
+test flatten::enum_::adjacently_tagged::unit ... ok
+test flatten::enum_::externally_tagged::straightforward ... ok
+test flatten::enum_::externally_tagged::struct_from_map ... ok
+test flatten::enum_::externally_tagged::newtype ... ok
+test flatten::enum_::externally_tagged::struct_from_seq ... ok
+test flatten::enum_::externally_tagged::tuple ... ok
+test flatten::enum_::externally_tagged::unit ... ok
+test flatten::enum_::internally_tagged::unit_enum_with_unknown_fields ... ok
+test flatten::enum_::untagged::struct_ ... ok
+test flatten::enum_::internally_tagged::structs ... ok
+test flatten::enum_tuple_and_struct ... ok
+test flatten::flatten_any_after_flatten_struct ... ok
+test flatten::ignored_any ... ok
+test flatten::lifetime_propagation ... ok
+test flatten::non_string_keys ... ok
+test flatten::map_twice ... ok
+test flatten::unit::unit ... ok
+test flatten::option ... ok
+test flatten::unit::unit_struct ... ok
+test flatten::unsupported_type ... ok
+test flatten::unknown_field ... ok
+test test_default_struct ... ok
+test test_default_struct_variant ... ok
+test test_default_tuple ... ok
+test test_default_tuple_variant ... ok
+test test_deserialize_with_enum ... ok
+test test_deserialize_with_struct ... ok
+test test_deserialize_with_variant ... ok
+test test_elt_not_deserialize ... ok
+test test_elt_not_serialize ... ok
+test test_expecting_message_externally_tagged_enum ... ok
+test test_expecting_message ... ok
+test test_expecting_message_identifier_enum ... ok
+test test_from_into_traits ... ok
+test test_ignore_unknown ... ok
+test test_invalid_length_enum ... ok
+test test_missing_renamed_field_enum ... ok
+test test_missing_renamed_field_struct ... ok
+test test_no_std_default ... ok
+test test_partially_untagged_enum ... ok
+test test_partially_untagged_enum_desugared ... ok
+test test_partially_untagged_enum_generic ... ok
+test test_partially_untagged_internally_tagged_enum ... ok
+test test_rename_struct ... ok
+test test_rename_enum ... ok
+test test_serialize_with_enum ... ok
+test test_serialize_with_struct ... ok
+test test_serialize_with_variant ... ok
+test test_skip_serializing_enum ... ok
+test test_skip_struct ... ok
+test test_transparent_tuple_struct ... ok
+test test_unknown_field_rename_enum ... ok
+test test_unknown_field_rename_struct ... ok
+test test_skip_serializing_struct ... ok
+test test_transparent_struct ... ok
+test test_skip_serializing_tuple_struct ... ok
+test test_collect_other ... ok
+
+test result: ok. 61 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 12 tests
+test test_borrowed_bytes ... ok
+test test_borrowed_bytes_from_bytebuf ... ok
+test test_borrowed_bytes_from_bytes ... ok
+test test_borrowed_str ... ok
+test test_borrowed_str_from_str ... ok
+test test_cow ... ok
+test test_field_identifier ... ok
+test test_borrowed_str_from_string ... ok
+test test_lifetimes ... ok
+test test_struct ... ok
+test test_string_from_borrowed_str ... ok
+test test_tuple ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 97 tests
+test test_arc ... ok
+test test_arc_weak_none ... ok
+test test_arc_dst ... ok
+test test_arc_weak_some ... ok
+test test_array ... ok
+test test_atomics ... ok
+test test_bool ... ok
+test test_bound ... ok
+test test_box ... ok
+test test_boxed_path ... ok
+test test_boxed_slice ... ok
+test test_btreemap ... ok
+test test_btreeset ... ok
+test test_char ... ok
+test test_cstr ... ok
+test test_cstring ... ok
+test test_enum_map ... ok
+test test_duration ... ok
+test test_enum_other_unit ... ok
+test test_enum_other ... ok
+test test_enum_simple ... ok
+test test_enum_seq ... ok
+test test_enum_simple_with_skipped ... ok
+test test_enum_unit ... ok
+test test_enum_unit_bytes ... ok
+test test_enum_unit_usize ... ok
+test test_f32 ... ok
+test test_f64 ... ok
+test test_generic_unit_struct ... ok
+test test_hashset ... ok
+test test_i128 ... ok
+test test_hashmap ... ok
+test test_i16 ... ok
+test test_ignored_any ... ok
+test test_isize ... ok
+test test_nan ... ok
+test test_net_ipaddr_readable ... ok
+test test_net_ipv4addr_compact ... ok
+test test_net_ipaddr_compact ... ok
+test test_i32 ... ok
+test test_i8 ... ok
+test test_i64 ... ok
+test test_net_ipv4addr_readable ... ok
+test test_net_ipv6addr_readable ... ok
+test test_net_ipv6addr_compact ... ok
+test test_net_socketaddr_readable ... ok
+test test_net_socketaddr_compact ... ok
+test test_never_result ... ok
+test test_nonzero_i16 ... ok
+test test_nonzero_i128 ... ok
+test test_nonzero_i32 ... ok
+test test_nonzero_i64 ... ok
+test test_newtype_struct ... ok
+test test_nonzero_isize ... ok
+test test_nonzero_u128 ... ok
+test test_nonzero_u32 ... ok
+test test_nonzero_u64 ... ok
+test test_nonzero_u16 ... ok
+test test_nonzero_i8 ... ok
+test test_nonzero_u8 ... ok
+test test_nonzero_usize ... ok
+test test_option ... ok
+test test_path ... ok
+test test_osstring ... ok
+test test_path_buf ... ok
+test test_range ... ok
+test test_range_from ... ok
+test test_range_to ... ok
+test test_range_inclusive ... ok
+test test_rc ... ok
+test test_rc_weak_none ... ok
+test test_rc_dst ... ok
+test test_rc_weak_some ... ok
+test test_result ... ok
+test test_string ... ok
+test test_saturating ... ok
+test test_struct_borrowed_keys ... ok
+test test_struct ... ok
+test test_struct_owned_keys ... ok
+test test_struct_skip_all ... ok
+test test_struct_default ... ok
+test test_struct_skip_all_deny_unknown ... ok
+test test_struct_skip_default ... ok
+test test_struct_with_skip ... ok
+test test_system_time ... ok
+test test_tuple ... ok
+test test_tuple_struct ... ok
+test test_u32 ... ok
+test test_u128 ... ok
+test test_u16 ... ok
+test test_u64 ... ok
+test test_unit ... ok
+test test_unit_struct ... ok
+test test_u8 ... ok
+test test_usize ... ok
+test test_wrapping ... ok
+test test_vec ... ok
+
+test result: ok. 97 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 66 tests
+test test_bool_from_string ... ok
+test test_btreemap_from_unit ... ok
+test test_btreeset_from_unit ... ok
+test test_btreemap_from_unit_struct ... ok
+test test_btreeset_from_unit_struct ... ok
+test test_cstr_internal_null ... ok
+test test_cstr_internal_null_end ... ok
+test test_cstring_internal_null ... ok
+test test_cstring_internal_null_end ... ok
+test test_duplicate_field_enum ... ok
+test test_duplicate_field_struct ... ok
+test test_duration_overflow_seq ... ok
+test test_enum_out_of_range ... ok
+test test_duration_overflow_struct ... ok
+test test_enum_skip_all ... ok
+test test_hashmap_from_unit ... ok
+test test_enum_skipped_variant ... ok
+test test_hashmap_from_unit_struct ... ok
+test test_hashset_from_unit ... ok
+test test_hashset_from_unit_struct ... ok
+test test_i128 ... ok
+test test_i16 ... ok
+test test_i64 ... ok
+test test_i8 ... ok
+test test_integer_from_float ... ok
+test test_nan_no_decimal_point ... ok
+test test_never_type ... ok
+test test_nonzero_i128 ... ok
+test test_nonzero_i16 ... ok
+test test_nonzero_i32 ... ok
+test test_nonzero_i64 ... ok
+test test_nonzero_i8 ... ok
+test test_nonzero_isize ... ok
+test test_nonzero_u128 ... ok
+test test_nonzero_u16 ... ok
+test test_nonzero_u32 ... ok
+test test_nonzero_u64 ... ok
+test test_nonzero_u8 ... ok
+test test_number_from_string ... ok
+test test_nonzero_usize ... ok
+test test_short_array ... ok
+test test_skip_all_deny_unknown ... ok
+test test_short_tuple ... ok
+test test_skipped_field_is_unknown ... ok
+test test_systemtime_overflow ... ok
+test test_string_from_unit ... ok
+test test_systemtime_overflow_seq ... ok
+test test_systemtime_overflow_struct ... ok
+test test_u128 ... ok
+test test_u16 ... ok
+test test_u32 ... ok
+test test_u8 ... ok
+test test_u64 ... ok
+test test_unit_from_empty_seq ... ok
+test test_unit_from_empty_seq_without_len ... ok
+test test_unit_from_tuple_struct ... ok
+test test_unit_struct_from_seq ... ok
+test test_unknown_field ... ok
+test test_unknown_variant ... ok
+test test_usize ... ok
+test test_vec_from_unit ... ok
+test test_vec_from_unit_struct ... ok
+test test_wrapping_overflow ... ok
+test test_zero_array_from_unit ... ok
+test test_zero_array_from_unit_struct ... ok
+test test_i32 ... ok
+
+test result: ok. 66 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 2 tests
+test test_packed_struct_deserialize_in_place ... ok
+test test_packed_tuple_struct ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 19 tests
+test deny_unknown_fields ... ok
+test expecting_message ... ok
+test newtype::map_tag_content ... ok
+test newtype::map_tag_only ... ok
+test newtype::seq ... ok
+test newtype_with_newtype ... ok
+test partially_untagged ... ok
+test struct_::map ... ok
+test struct_::seq ... ok
+test struct_with_flatten ... ok
+test tuple::map ... ok
+test tuple::seq ... ok
+test unit::map_bytes_tag_content ... ok
+test unit::map_bytes_tag_only ... ok
+test unit::map_int_tag_content ... ok
+test unit::map_int_tag_only ... ok
+test unit::map_str_tag_content ... ok
+test unit::map_str_tag_only ... ok
+test unit::seq_tag_content ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 24 tests
+test borrow ... ok
+test containing_flatten ... ok
+test expecting_message ... ok
+test newtype_enum::newtype ... ok
+test newtype_enum::tuple ... ok
+test newtype_enum::struct_ ... ok
+test newtype_enum::unit ... ok
+test newtype_map ... ok
+test newtype_newtype ... ok
+test newtype_unit ... ok
+test newtype_struct ... ok
+test newtype_unit_struct ... ok
+test string_and_bytes::bytes_from_bytes ... ok
+test string_and_bytes::bytes_from_seq ... ok
+test string_and_bytes::bytes_from_string ... ok
+test string_and_bytes::string_from_bytes ... ok
+test string_and_bytes::string_from_string ... ok
+test struct_ ... ok
+test unit ... ok
+test struct_enum::unit ... ok
+test unit_variant_with_unknown_fields ... ok
+test untagged_variant ... ok
+test with_skipped_conflict ... ok
+test wrong_tag ... ok
+
+test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 19 tests
+test contains_flatten ... ok
+test contains_flatten_with_integer_key ... ok
+test complex ... ok
+test newtype_enum::empty_struct_from_map ... ok
+test expecting_message ... ok
+test newtype_enum::empty_struct_from_seq ... ok
+test newtype_enum::newtype ... ok
+test newtype_enum::struct_from_map ... ok
+test newtype_enum::struct_from_seq ... ok
+test newtype_enum::tuple0 ... ok
+test newtype_enum::tuple2 ... ok
+test newtype_enum::unit ... ok
+test newtype_struct ... ok
+test newtype_unit_and_empty_map ... ok
+test string_and_bytes ... ok
+test with_optional_field::none ... ok
+test with_optional_field::some ... ok
+test with_optional_field::unit ... ok
+test with_optional_field::some_without_marker ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 1 test
+test test_gen ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 9 tests
+test field_identifier::aliases ... ok
+test field_identifier::newtype_fallthrough ... ok
+test field_identifier::field1 ... ok
+test field_identifier::newtype_fallthrough_generic ... ok
+test field_identifier::unit_fallthrough ... ok
+test field_identifier::unknown ... ok
+test variant_identifier::aliases ... ok
+test variant_identifier::unknown ... ok
+test variant_identifier::variant1 ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 1 test
+test test_deserialize_enum ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 2 tests
+test test_internally_tagged_nonrecursive_newtype ... ok
+test test_internally_tagged_recursive_enum ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 27 tests
+test test_de_enum_seq ... ok
+test test_de_enum_map ... ok
+test test_de_enum_unit ... ok
+test test_de_named_map ... ok
+test test_de_named_tuple ... ok
+test test_default_ty_param ... ok
+test test_generic_enum_map ... ok
+test test_enum_state_field ... ok
+test test_generic_enum_newtype ... ok
+test test_generic_enum_seq ... ok
+test test_generic_enum_unit ... ok
+test test_generic_newtype_struct ... ok
+test test_generic_tuple_struct ... ok
+test test_generic_struct ... ok
+test test_internally_tagged_braced_struct_with_zero_fields ... ok
+test test_internally_tagged_struct ... ok
+test test_lifetimes ... ok
+test test_internally_tagged_struct_with_flattened_field ... ok
+test test_named_unit ... ok
+test test_packed_struct_can_derive_serialize ... ok
+test test_ser_enum_map ... ok
+test test_rename_all_fields ... ok
+test test_ser_enum_seq ... ok
+test test_ser_named_map ... ok
+test test_ser_named_tuple ... ok
+test test_rename_all ... ok
+test test_ser_enum_unit ... ok
+
+test result: ok. 27 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 2 tests
+test ip_addr_roundtrip ... ok
+test socket_addr_roundtrip ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 1 test
+test test_self ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 63 tests
+test test_arc ... ok
+test test_arc_dst ... ok
+test test_arc_weak_none ... ok
+test test_arc_weak_some ... ok
+test test_array ... ok
+test test_atomic ... ok
+test test_atomic64 ... ok
+test test_bool ... ok
+test test_bound ... ok
+test test_box ... ok
+test test_boxed_slice ... ok
+test test_btreeset ... ok
+test test_cannot_serialize_mutably_borrowed_ref_cell ... ok
+test test_btreemap ... ok
+test test_cannot_serialize_paths ... ok
+test test_char ... ok
+test test_cstr ... ok
+test test_duration ... ok
+test test_cstring ... ok
+test test_enum ... ok
+test test_enum_skipped ... ok
+test test_floats ... ok
+test test_fmt_arguments ... ok
+test test_isizes ... ok
+test test_mutex_dst ... ok
+test test_integer128 ... ok
+test test_net_ipaddr_compact ... ok
+test test_hashset ... ok
+test test_net_ipaddr_readable ... ok
+test test_net_ipv4addr_readable ... ok
+test test_net_ipv4addr_compact ... ok
+test test_net_ipv6addr_compact ... ok
+test test_net_ipv6addr_readable ... ok
+test test_net_socketaddr_compact ... ok
+test test_net_socketaddr_readable ... ok
+test test_never_result ... ok
+test test_option ... ok
+test test_hashmap ... ok
+test test_path ... ok
+test test_range_inclusive ... ok
+test test_path_buf ... ok
+test test_rc_dst ... ok
+test test_rc_weak_none ... ok
+test test_rc_weak_some ... ok
+test test_slice ... ok
+test test_range ... ok
+test test_str ... ok
+test test_range_from ... ok
+test test_rc ... ok
+test test_system_time ... ok
+test test_tuple ... ok
+test test_result ... ok
+test test_refcell_dst ... ok
+test test_tuple_struct ... ok
+test test_rwlock_dst ... ok
+test test_range_to ... ok
+test test_struct ... ok
+test test_unit ... ok
+test test_saturating ... ok
+test test_usizes ... ok
+test test_vec ... ok
+test test_wrapping ... ok
+test test_unit_struct ... ok
+
+test result: ok. 63 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 1 test
+test test_gen_custom_serde ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 1 test
+test unstable::test_raw_identifiers ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test test_integer128 ... ok
+test test_map_access_to_enum ... ok
+test test_u32_to_enum ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.09s
+     Running tests/compiletest.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/6f2e3ddaf0bf7398/out/compiletest-6f2e3ddaf0bf7398)
+    Checking serde_test_suite-tests v0.0.0 (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/tests/trybuild/serde_test_suite)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.05s
+
+
+test [0m[1mtests/ui/borrow/bad_lifetimes.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/borrow/duplicate_lifetime.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/borrow/duplicate_variant.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/borrow/empty_lifetimes.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/borrow/no_lifetimes.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/borrow/struct_variant.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/borrow/wrong_lifetime.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/conflict/adjacent-tag.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/conflict/alias-enum.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/conflict/alias.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/conflict/flatten-newtype-struct.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/conflict/flatten-tuple-struct.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/conflict/from-try-from.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/conflict/internal-tag-alias.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/conflict/internal-tag.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/default-attribute/enum.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/default-attribute/enum_path.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/default-attribute/incorrect_type_enum_adjacently_tagged.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/default-attribute/incorrect_type_enum_externally_tagged.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/default-attribute/incorrect_type_enum_internally_tagged.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/default-attribute/incorrect_type_enum_untagged.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/default-attribute/incorrect_type_newtype.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/default-attribute/incorrect_type_struct.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/default-attribute/incorrect_type_tuple.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/default-attribute/tuple_struct.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/default-attribute/tuple_struct_path.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/default-attribute/union.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/default-attribute/union_path.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/default-attribute/unit.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/default-attribute/unit_path.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/deprecated/deprecated_de_with.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/deprecated/deprecated_ser_with.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/duplicate-attribute/rename-and-ser.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/duplicate-attribute/rename-ser-rename-ser.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/duplicate-attribute/rename-ser-rename.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/duplicate-attribute/rename-ser-ser.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/duplicate-attribute/two-rename-ser.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/duplicate-attribute/with-and-serialize-with.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/enum-representation/content-no-tag.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/enum-representation/internal-tuple-variant.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/enum-representation/partially_tagged_wrong_order.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/enum-representation/untagged-and-adjacent.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/enum-representation/untagged-and-content.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/enum-representation/untagged-and-internal.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/enum-representation/untagged-struct.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/expected-string/boolean.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/expected-string/byte_character.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/expected-string/byte_string.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/expected-string/character.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/expected-string/float.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/expected-string/integer.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/identifier/both.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/identifier/field_struct.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/identifier/field_tuple.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/identifier/newtype_not_last.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/identifier/not_unit.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/identifier/other_not_last.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/identifier/other_untagged.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/identifier/other_variant.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/identifier/variant_struct.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/identifier/variant_tuple.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/malformed/bound.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/malformed/cut_off.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/malformed/not_list.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/malformed/rename.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/malformed/str_suffix.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/malformed/trailing_expr.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/precondition/deserialize_de_lifetime.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/precondition/deserialize_dst.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/precondition/serialize_field_identifier.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/precondition/serialize_variant_identifier.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/remote/bad_getter.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/remote/bad_remote.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/remote/double_generic.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/remote/enum_getter.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/remote/missing_field.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/remote/nonremote_getter.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/remote/unknown_field.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/remote/wrong_de.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/remote/wrong_getter.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/remote/wrong_ser.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/rename/container_unknown_rename_rule.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/rename/variant_unknown_rename_rule.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/struct-representation/internally-tagged-tuple.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/struct-representation/internally-tagged-unit.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/transparent/at_most_one.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/transparent/de_at_least_one.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/transparent/enum.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/transparent/ser_at_least_one.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/transparent/unit_struct.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/transparent/with_from.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/transparent/with_into.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/transparent/with_try_from.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/type-attribute/from.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/type-attribute/into.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/type-attribute/try_from.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/unexpected-literal/container.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/unexpected-literal/field.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/unexpected-literal/variant.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/unimplemented/required_by_dependency.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/unimplemented/required_locally.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/unknown-attribute/container.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/unknown-attribute/field.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/unknown-attribute/variant.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/unsupported/union_de.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/unsupported/union_ser.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/with/incorrect_type.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/with-variant/skip_de_newtype_field.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/with-variant/skip_de_struct_field.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/with-variant/skip_de_tuple_field.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/with-variant/skip_de_whole_variant.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/with-variant/skip_ser_newtype_field.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/with-variant/skip_ser_newtype_field_if.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/with-variant/skip_ser_struct_field.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/with-variant/skip_ser_struct_field_if.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/with-variant/skip_ser_tuple_field.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/with-variant/skip_ser_tuple_field_if.rs[0m ... [0m[32mok
+[0mtest [0m[1mtests/ui/with-variant/skip_ser_whole_variant.rs[0m ... [0m[32mok
+[0m
+
+     Running tests/regression.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/5679916ac379c5cf/out/regression-5679916ac379c5cf)
+     Running tests/test_annotations.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/0ec8f3410c5f9e27/out/test_annotations-0ec8f3410c5f9e27)
+     Running tests/test_borrow.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/8e4ac4c8133b0039/out/test_borrow-8e4ac4c8133b0039)
+     Running tests/test_de.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/35f3ef9a24ac6a34/out/test_de-35f3ef9a24ac6a34)
+     Running tests/test_de_error.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/3edf86c1748f76b9/out/test_de_error-3edf86c1748f76b9)
+     Running tests/test_deprecated.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/00f72683f06fe19b/out/test_deprecated-00f72683f06fe19b)
+     Running tests/test_derive_deserialize_packed.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/ab034af71b366d89/out/test_derive_deserialize_packed-ab034af71b366d89)
+     Running tests/test_enum_adjacently_tagged.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/e4b2e161cc69a54d/out/test_enum_adjacently_tagged-e4b2e161cc69a54d)
+     Running tests/test_enum_internally_tagged.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/4ca17af72e12de8f/out/test_enum_internally_tagged-4ca17af72e12de8f)
+     Running tests/test_enum_untagged.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/877b0376a1aa0a78/out/test_enum_untagged-877b0376a1aa0a78)
+     Running tests/test_gen.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/5d654efebb59bcd0/out/test_gen-5d654efebb59bcd0)
+     Running tests/test_identifier.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/3284343a9a4d139a/out/test_identifier-3284343a9a4d139a)
+     Running tests/test_ignored_any.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/69ca676c5c4df984/out/test_ignored_any-69ca676c5c4df984)
+     Running tests/test_internally_tagged_recursive.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/17792fc9b949725d/out/test_internally_tagged_recursive-17792fc9b949725d)
+     Running tests/test_macros.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/f2255d11273a9c4c/out/test_macros-f2255d11273a9c4c)
+     Running tests/test_remote.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/809ebb42688a07a8/out/test_remote-809ebb42688a07a8)
+     Running tests/test_roundtrip.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/5d9327cc1318872c/out/test_roundtrip-5d9327cc1318872c)
+     Running tests/test_self.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/5ca150ff756081d5/out/test_self-5ca150ff756081d5)
+     Running tests/test_ser.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/3b280bea0eb6b58d/out/test_ser-3b280bea0eb6b58d)
+     Running tests/test_serde_path.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/873a08a8371ea87e/out/test_serde_path-873a08a8371ea87e)
+     Running tests/test_unstable.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/e759002d3c9a0509/out/test_unstable-e759002d3c9a0509)
+     Running tests/test_value.rs (/home/pavc/.adlc/worktrees/Serde/PER-100/app/target/debug/build/serde_test_suite/80ecfb627419111f/out/test_value-80ecfb627419111f)
+
+(exit 0)
+
