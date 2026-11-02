@@ -1,15 +1,15 @@
 ---
 schema_version: 1
 key: PER-100
-status: developed
-current_node: dev
+status: pr_reviewed
+current_node: pr_review
 track: standard
 involved_repos:
 - app
 depends_on: []
 owner: pavc
 lease_until: '2026-11-04T13:49:00.771426+00:00'
-revision: 23
+revision: 30
 hub_sha: null
 ticket_hash: 33dd3b9207e35abd
 jira_hash: 33dd3b9207e35abd
@@ -28,10 +28,11 @@ pr_ids:
   hub_plan: '3'
   hub_arch: '4'
   hub: '4'
-waiting_for: human_pr
-tokens_in: 23814
-tokens_out: 4266
-cost_anthropic_usd: 0.135084
+  app: '2'
+waiting_for: feature_pr_human
+tokens_in: 36060
+tokens_out: 4273
+cost_anthropic_usd: 0.171927
 history:
 - node: intake
   note: snapshot written
@@ -76,6 +77,24 @@ history:
 - node: dev
   note: 'human_mode: code ready, PR deferred'
   at: '2026-11-02T14:12:00.806742+00:00'
+- node: dev
+  note: 'human_mode: resume opens PR'
+  at: '2026-11-02T14:12:13.681023+00:00'
+- node: pre_pr_qa
+  note: report written
+  at: '2026-11-02T14:12:13.762730+00:00'
+- node: open_pr
+  note: push app ok
+  at: '2026-11-02T14:12:21.474890+00:00'
+- node: open_pr
+  note: PRs opened app:2
+  at: '2026-11-02T14:12:21.474930+00:00'
+- node: pr_review
+  note: diff loaded app chars=25228
+  at: '2026-11-02T14:12:22.586752+00:00'
+- node: pr_review
+  note: awaiting feature_pr_human
+  at: '2026-11-02T14:12:32.171840+00:00'
 ---
 
 # Feature state

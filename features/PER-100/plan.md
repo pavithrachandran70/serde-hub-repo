@@ -16,8 +16,8 @@ Fix rustc recursion overflow when deriving Serialize on internally tagged recurs
    - focus: Focus on the internally tagged newtype serialization path in serde_derive that causes recursion. Emphasize that only Serialize derivation for internally tagged enums needs fixing, and Deserialize stays unchanged. Note the regression test requirement and the specific fork target.
 2. [x] **architect_gate (review)** _(auto)_ — Human approval of specs and this plan before Dev.
 3. [ ] **dev** _(auto)_ — Loop delivery.
-4. [ ] **pre_pr_qa** _(auto)_ — Loop delivery.
-5. [ ] **open_pr** _(auto)_ — Loop delivery.
+4. [x] **pre_pr_qa** _(auto)_ — Loop delivery.
+5. [x] **open_pr** _(auto)_ — Loop delivery.
 6. [ ] **pr_review** _(auto)_ — Loop delivery.
 7. [ ] **merge** _(auto)_ — Loop delivery.
 
